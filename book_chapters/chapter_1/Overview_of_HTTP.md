@@ -79,8 +79,8 @@ ___Almost every URI is a URL.___
 
 A ___uniform resource name___ (__URN__) serves as a unique name for a particular piece of content, independent of where the resource currently resides. These location-independent URNs allow resources to move from place to place. URNs also allow resources to be accessed by multiple network access protocols while maintaining the same name.
 
-_For example_, the following URN might be used to name the Internet standards document “RFC 2141” regardless of where it resides (it may even be copied in several places): 
-urn:ietf:rfc:2141
+_For example_, the following URN might be used to name the Internet standards document “RFC 2141” regardless of where it resides (it may even be copied in several places):
+	urn:ietf:rfc:2141
 
 ---
 
@@ -186,9 +186,9 @@ In TCP, you need the IP address of the server computer and the TCP port number a
 This is all well and good, but how do you get the IP address and port number of the HTTP server in the first place? Why, the URL, of course! We mentioned before that URLs are the addresses for resources, so naturally enough they can provide us with the IP address for the machine that has the resource.
 
 _Let’s take a look at a few URLs:_
-http://207.200.83.29:80/index.html
-http://www.netscape.com:80/index.html
-http://www.netscape.com/index.html
+- http://207.200.83.29:80/index.html
+- http://www.netscape.com:80/index.html
+- http://www.netscape.com/index.html
 
 The first URL has the machine’s IP address, “207.200.83.29”, and port number, “80”.
 
