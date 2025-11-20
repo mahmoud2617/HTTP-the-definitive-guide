@@ -1,18 +1,21 @@
-## HTTP: The Internet's Multimedia Courier:
+### HTTP: The Internet's Multimedia Courier:
 
 Because HTTP uses reliable data-transmission protocols, it's guarantees that your data will not be damaged or scrambled in transit, even when it comes from other side of the globe.
 
 ---
 
-## Web Clients and Servers:
+### Web Clients and Servers:
 
 The **_Web servers_** (aka **_HTTP servers_**) store the internet's data and provide the data when it's requested by HTTP clients. The clients send HTTP requests to servers and servers return the requested data in HTTP responses.
 
 ![[web_client_and_servers.png]]
 
+
+---
 ---
 
-## Resources:
+
+## Resources
 
 Web servers host ___web resources___. A web resource is the source of web content. The simplest kind of web resource is a static file on the web server's file-system. These files can contain anything: they might be text files, HTML files, Microsoft Word files, Adobe Acrobat files, JPEG image files, AVI movie files, or any other format.
 
@@ -22,7 +25,7 @@ Resources can also be software programs that generate content on demand. These d
 
 ---
 
-## Media Types:
+### Media Types:
 
 Because the Internet hosts many thousands of different data types, HTTP carefully tags each object being transported through the Web with a data format label called a ___MIME___ type. __MIME__ (_Multipurpose Internet Mail Extensions_) was originally designed to solve problems encountered in moving messages between different electronic mail systems.
 
@@ -38,19 +41,21 @@ A MIME type is a textual label, represented as a ___primary object type___ and a
 - An Apple QuickTime movie would be _video/quicktime_.
 - A Microsoft PowerPoint presentation would be _application/vnd.ms-powerpoint_.
 
+More information about MIME: [[Appendixes]] -> #MIME_Types 
+
 ---
 
-## URIs:
+### URIs:
 
 Each web server resource has a name, so clients can point out what resources they are interested in. The server resource name is called a ___uniform resource identifier___, or __URI__. URIs are like the postal addresses of the Internet, uniquely identifying and locating information resources around the world.
 
-_For example:_ http://www.joes-hardware.com/specials/saw-blade.gif
+_For example:_ `http://www.joes-hardware.com/specials/saw-blade.gif`
 
 URIs come in two flavors, called URLs and URNs.
 
 ---
 
-## URLs:
+### URLs:
 
 The ___uniform resource locator___ (__URL__) is the most common form of resource identifier. URLs describe the specific location of a resource on a particular server. They tell you exactly how to fetch a resource from a precise, fixed location.
 
@@ -59,32 +64,35 @@ The ___uniform resource locator___ (__URL__) is the most common form of resource
 
 ___Example URLs:___
 
-| URL                                                         | Description                                                                                        |
-| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| http://www.oreilly.com/index.html                           | The home URL for O’Reilly & Associates, Inc.                                                       |
-| http://www.yahoo.com/images/logo.gif                        | The URL for the Yahoo! web site’s logo.                                                            |
-| http://www.joes-hardware.com/inventory-check.cgi?item=12731 | The URL for a program that checks if inventory item #12731 is in stock.                            |
-| ftp://joe:tools4u@ftp.joes-hardware.com/lockingpliers.gif   | The URL for thelocking-pliers.gif image file, using password-protected FTP as the access protocol. |
+| URL                                                           | Description                                                                                         |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `http://www.oreilly.com/index.html`                           | The home URL for O’Reilly & Associates, Inc.                                                        |
+| `http://www.yahoo.com/images/logo.gif`                        | The URL for the Yahoo! web site’s logo.                                                             |
+| `http://www.joes-hardware.com/inventory-check.cgi?item=12731` | The URL for a program that checks if inventory item #12731 is in stock.                             |
+| `ftp://joe:tools4u@ftp.joes-hardware.com/lockingpliers.gif`   | The URL for the locking-pliers.gif image file, using password-protected FTP as the access protocol. |
 
 Most URLs follow a standardized format of three main parts:
 - The first part of the URL is called the ___scheme___, and it describes the protocol used to access the resource. This is usually the HTTP protocol (http://).
-- The second part gives the server Internet address (e.g., www.joes-hardware.com).
+- The second part gives the server Internet address (e.g., `www.joes-hardware.com`).
 - The rest names a resource on the web server (e.g., /specials/saw-blade.gif).
 
 ___Almost every URI is a URL.___
 
 ---
 
-## URNs:
+### URNs:
 
 A ___uniform resource name___ (__URN__) serves as a unique name for a particular piece of content, independent of where the resource currently resides. These location-independent URNs allow resources to move from place to place. URNs also allow resources to be accessed by multiple network access protocols while maintaining the same name.
 
 _For example_, the following URN might be used to name the Internet standards document “RFC 2141” regardless of where it resides (it may even be copied in several places):
-	urn:ietf:rfc:2141
+	`urn:ietf:rfc:2141`
+
 
 ---
+---
 
-## Transactions:
+
+## Transactions
 
 An HTTP transaction consists of a request command (sent from client to server), and a response result (sent from the server back to the client). This communication happens with formatted blocks of data called HTTP messages.
 
@@ -92,7 +100,7 @@ An HTTP transaction consists of a request command (sent from client to server), 
 
 ---
 
-## Methods:
+### Methods:
 
 HTTP supports several different request commands, called HTTP methods. Every HTTP request message has a method. The method tells the server what action to perform (fetch a web page, run a gateway program, delete a file, etc.).
 
@@ -109,7 +117,7 @@ ___Some common HTTP methods:___
 
 ---
 
-## Status Codes:
+### Status Codes:
 
 Every HTTP response message comes back with a status code. The status code is a three-digit numeric code that tells the client if the request succeeded, or if other actions are required.
 
@@ -126,15 +134,18 @@ HTTP also sends an explanatory textual “_reason phrase_” with each numeric s
 
 ---
 
-## Web Pages Can Consist of Multiple Objects:
+### Web Pages Can Consist of Multiple Objects:
 
 An application often issues multiple HTTP transactions to accomplish a task. _For example_, a web browser issues a cascade of HTTP transactions to fetch and display a graphics-rich web page. The browser performs one transaction to fetch the HTML “_skeleton_” that describes the page layout, then issues additional HTTP transactions for each embedded image, graphics pane, Java applet, etc. These embedded resources might even reside on different servers. Thus, a _web page_ often is a collection of resources, not a single resource.
 
 ![[web_pages.png]]
 
+
+---
 ---
 
-## Messages:
+
+## Messages
 
 HTTP messages are simple, line-oriented sequences of characters. Because they are plain text, not binary, they are easy for humans to read and write.
 
@@ -154,9 +165,14 @@ HTTP messages consist of three parts:
 
 ![[messages_example.png]]
 
+
+---
 ---
 
-## TCP/IP:
+
+## Connections
+
+### TCP/IP:
 
 HTTP is an application layer protocol. HTTP doesn’t worry about the nitty-gritty details of network communication; instead, it leaves the details of networking to TCP/IP, the popular reliable Internet transport protocol.
 
@@ -175,7 +191,7 @@ In networking terms, the HTTP protocol is layered over TCP. HTTP uses TCP to tra
 
 ---
 
-## Connections, IP Addresses, and Port Numbers:
+### Connections, IP Addresses, and Port Numbers:
 
 Before an HTTP client can send a message to a server, it needs to establish a TCP/IP connection between the client and server using _Internet protocol_ (IP) addresses and _port numbers._
 
@@ -186,13 +202,13 @@ In TCP, you need the IP address of the server computer and the TCP port number a
 This is all well and good, but how do you get the IP address and port number of the HTTP server in the first place? Why, the URL, of course! We mentioned before that URLs are the addresses for resources, so naturally enough they can provide us with the IP address for the machine that has the resource.
 
 _Let’s take a look at a few URLs:_
-- http://207.200.83.29:80/index.html
-- http://www.netscape.com:80/index.html
-- http://www.netscape.com/index.html
+- `http://207.200.83.29:80/index.html`
+- `http://www.netscape.com:80/index.html`
+- `http://www.netscape.com/index.html`
 
 The first URL has the machine’s IP address, “207.200.83.29”, and port number, “80”.
 
-The second URL doesn’t have a numeric IP address; it has a textual domain name, or host-name ("www.netscape.com"). The host-name is just a human-friendly alias for an IP address. Host-names can easily be converted into IP addresses through a facility called the ___Domain Name Service___ (__DNS__), so we’re all set here, too.
+The second URL doesn’t have a numeric IP address; it has a textual domain name, or host-name ("`www.netscape.com`"). The host-name is just a human-friendly alias for an IP address. Host-names can easily be converted into IP addresses through a facility called the ___Domain Name Service___ (__DNS__), so we’re all set here, too.
 
 The final URL has no port number. When the port number is missing from an HTTP URL, you can assume the default value of port __80__. With the IP address and port number, a client can easily communicate via TCP/IP.
 
@@ -209,18 +225,19 @@ _Here are the steps:_
 
 ---
 
-## A Real Example Using Telnet:
+### A Real Example Using Telnet:
 
 The ___Telnet___ utility connects your keyboard to a destination TCP port and connects the TCP port output back to your display screen. Telnet is commonly used for remote terminal sessions, but it can generally connect to any TCP server, including HTTP servers.
 
 You can use the Telnet utility to talk directly to web servers. Telnet lets you open a TCP connection to a port on a machine and type characters directly into the port. The web server treats you as a web client, and any data sent back on the TCP connection is displayed onscreen.
 
-Let’s use Telnet to interact with a real web server. We will use Telnet to fetch the document pointed to by the URL http://www.joes-hardware.com:80/tools.html. Let’s review what should happen:
-- First, we need to look up the IP address of www.joes-hardware.com and open a TCP connection to port 80 on that machine. Telnet does this legwork for us.
+Let’s use Telnet to interact with a real web server. We will use Telnet to fetch the document pointed to by the URL `http://www.joes-hardware.com:80/tools.html`. Let’s review what should happen:
+- First, we need to look up the IP address of `www.joes-hardware.com` and open a TCP connection to port 80 on that machine. Telnet does this legwork for us.
 - Once the TCP connection is open, we need to type in the HTTP request.
 - When the request is complete (indicated by a blank line), the server should send back the content in an HTTP response and close the connection.
 
 **_`Note: Telnet only works with HTTP, not HTTPS, because it doesn't support encryption. Since most websites now use HTTPS by default, Telnet can't be used to connect to them.`_**
+
 Thus, we are going to create local http server to try a similar example. Here's a simple HTTP server with Java, you can copy it and paste in any IDE you like.
 (**_Don't worry if you didn't understand that code, you don't have to learn how to create a web server now, we're going to learn it later_**).
 
@@ -298,9 +315,12 @@ Connection closed by foreign host.
 - Telnet looks up the host-name and opens a connection to the _localhost_, which is listening on port 8080. The three lines after the command are output from Telnet, telling us it has established a connection.
 - We then type in our basic request command, “_GET /content.html HTTP/1.1_”, and send a Host header providing the original host-name "_localhost_", followed by a blank line, asking the server to GET us the resource “_/content.html_” from the server "_localhost_". After that, the server responds with a response line, several response headers, a blank line, and finally the body of the HTML document.
 
+
+---
 ---
 
-## Architectural Components of the Web:
+
+## Architectural Components of the Web
 
 we’ve focused on how two web applications (web browsers and web servers) send messages back and forth to implement basic transactions. There are many other web applications that you interact with on the Internet. In this section, we’ll outline several other important applications, _including_:
 - __Proxies__
@@ -363,6 +383,12 @@ _For example_, there are machine-automated user agents that autonomously wander 
 
 Spiders wander the Web to build useful archives of web content, such as a search engine’s database or a product catalog for a comparison-shopping robot.
 
+
+---
+---
+
+
+## Done.
 ---
 ---
 
